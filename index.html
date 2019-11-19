@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>1億円シミュレーター</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="animate.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  </head>
+  <body>
+      <h1>1億円シミュレーター（テスト版）</h1>
+      <h1 class="animated fadeIn">テスト</h1><!-- AnimateCSS -->
+    <div class="tabs-menu">
+      <div id="tab-menu-a">1億円シミュレーター</div>
+      <div id="tab-menu-b">自分で目標金額を設定する</div>
+      <div id="tab-menu-c">なぜ1億円?(本サイトの目的)</div>
+      <div id="tab-menu-d">作った人</div>
+    </div>
+    <div class="tabs-content">
+      <div id="tabs-a">
+       <section id="example">
+          <p>年数： <input v-model="years" type="text" /> 年後</p>
+          <p>年利： <input v-model="rate" type="text" /> % (現実的な範囲3~8%程度)</p>
+        
+        
+          1億円を達成する為に必要な毎月の積立額：{{ (tumitate/12).toFixed(0) }}円</br>
+          毎月積み立てられる額： <input v-model="tmoney" type="text" />円<br>
+          1日あたり:{{ ((tumitate/12 - tmoney)/30.4).toFixed(0) }}円 節約するか収入を増やす必要があります。
+        </section>
+         </div>
+     
+      
+      
+      
+      
+      <div id="tabs-b">
+        <section id="original">
+          <p>目標額： <input v-model="originalmmoney" type="text" />円</p>
+          <p>年数： <input v-model="originalyears" type="text" /> 年後</p>
+          <p>年利： <input v-model="originalrate" type="text" /> % 現実的な範囲3~8%程度</p>
+         
+          {{originalmmoney}}円を達成する為に必要な毎月の積立額：{{ (tumitate2/12).toFixed(0) }}円</br>
+          毎月積み立てられる額： <input v-model="originaltmoney" type="text" />円<br>
+          1日あたり:{{ ((tumitate2/12 - originaltmoney)/30.4).toFixed(0) }}円 節約するか収入を増やす必要があります。
+          
+        
+        </section> 
+      </div>
+      <div id="tabs-c">
+        <p>comming soon</p>
+      </div>
+      
+      <div id="tabs-d">
+        <p>comming soon</p>
+      </div>
+    </div>      
+        
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
